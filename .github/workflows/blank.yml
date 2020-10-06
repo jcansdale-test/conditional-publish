@@ -5,12 +5,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      FOO: FOO
-
     steps:
       - uses: actions/checkout@v2
 
       - name: Run a one-line script
-        if: ${{ env.FOO == 'FOO' }}
+        if: ${{ secrets.FOO == 'FOO' }}
         run: echo Hello, world!
