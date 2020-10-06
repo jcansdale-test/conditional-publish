@@ -8,8 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        if: ${{ env.FOO == 'FOO' }}
-        run: echo Publish using secret ${{ env.FOO }}
+      - name: Publish to ghcr.io when GHCR_TOKEN secret exists
+        if: ${{ env.GHCR_TOKEN != '' }}
+        run: echo Publish to ghcr.io using ${{ env.GHCR_TOKEN }}
         env:
-          FOO: ${{ secrets.FOO }}
+          FOO: ${{ secrets.GHCR_TOKEN }}
