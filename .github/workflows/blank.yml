@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Publish to ghcr.io when GHCR_TOKEN secret exists
-        if: ${{ env.GHCR_TOKEN != '' }}
+        # if: ${{ env.GHCR_TOKEN != '' }}
         run: echo Publish to ghcr.io using ${{ env.GHCR_TOKEN }}
         env:
           FOO: ${{ secrets.GHCR_TOKEN }}
