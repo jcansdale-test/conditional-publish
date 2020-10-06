@@ -10,6 +10,6 @@ jobs:
 
       - name: Run a one-line script
         if: ${{ env.FOO == 'FOO' }}
-        run: echo Hello, world!
+        run: echo Publish using secret ${{ env.FOO }}
         env:
           FOO: ${{ secrets.FOO }}
