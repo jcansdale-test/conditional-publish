@@ -5,6 +5,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      FOO: FOO
+
     steps:
       - uses: actions/checkout@v2
 
